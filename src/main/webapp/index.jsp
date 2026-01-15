@@ -10,17 +10,34 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
+    :root {
+      --bg: #f4f6f8;
+      --text: #333;
+      --card: #ffffff;
+      --primary: #3498db;
+      --secondary: #2c3e50;
+    }
+
+    body.dark {
+      --bg: #121212;
+      --text: #eaeaea;
+      --card: #1e1e1e;
+      --primary: #00c3ff;
+      --secondary: #0a2540;
+    }
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: #f4f6f8;
-      color: #333;
+      background: var(--bg);
+      color: var(--text);
+      transition: 0.3s;
     }
 
     header {
-      background: linear-gradient(120deg, #2c3e50, #3498db);
+      background: linear-gradient(120deg, var(--secondary), var(--primary));
       color: white;
-      padding: 40px 20px;
+      padding: 50px 20px;
       text-align: center;
     }
 
@@ -30,68 +47,92 @@
     }
 
     header p {
+      margin-top: 10px;
       font-size: 18px;
-      margin-top: 5px;
+    }
+
+    .toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+      font-size: 20px;
     }
 
     nav {
-      background: white;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
+      background: var(--card);
       padding: 15px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
     nav a {
       text-decoration: none;
-      color: #3498db;
+      color: var(--primary);
       font-weight: 600;
     }
 
     section {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
       padding: 40px 20px;
     }
 
     h2 {
-      color: #2c3e50;
-      border-bottom: 2px solid #3498db;
+      border-bottom: 2px solid var(--primary);
       display: inline-block;
       margin-bottom: 20px;
     }
 
     .card {
-      background: white;
+      background: var(--card);
       padding: 20px;
       border-radius: 8px;
       margin-bottom: 20px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.08);
     }
 
-    .skills {
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 15px;
     }
 
-    .skill-box {
-      background: #ecf3fa;
-      padding: 15px;
+    .badge {
+      display: inline-block;
+      margin: 5px;
+      padding: 6px 12px;
+      background: var(--primary);
+      color: white;
+      border-radius: 20px;
+      font-size: 13px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      background: var(--primary);
+      color: white;
       border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 10px;
     }
 
     footer {
-      background: #2c3e50;
+      background: var(--secondary);
       color: white;
       text-align: center;
       padding: 20px;
+      margin-top: 40px;
     }
 
-    .contact i {
-      margin-right: 10px;
-      color: #3498db;
+    @media (max-width: 600px) {
+      header h1 { font-size: 28px; }
+      header p { font-size: 16px; }
     }
   </style>
 </head>
@@ -99,8 +140,16 @@
 <body>
 
 <header>
+  <div class="toggle" onclick="toggleTheme()">
+    <i class="fas fa-moon"></i>
+  </div>
   <h1>Siddhi Paswan</h1>
   <p>Data Engineer | Palantir Foundry | DevOps & Cloud</p>
+
+  <!-- Resume Download -->
+  <a class="btn" href="SiddhiPaswan_Resume.pdf" download>
+    <i class="fas fa-download"></i> Download Resume
+  </a>
 </header>
 
 <nav>
@@ -108,85 +157,9 @@
   <a href="#experience">Experience</a>
   <a href="#projects">Projects</a>
   <a href="#skills">Skills</a>
+  <a href="#devops">DevOps</a>
   <a href="#contact">Contact</a>
 </nav>
 
 <section id="about">
   <h2>About Me</h2>
-  <div class="card">
-    <p>
-      Data Engineer with 3+ years of experience on the Palantir Foundry platform.
-      Skilled in designing scalable data pipelines, governance frameworks, and
-      reliable workflows. Strong problem-solver with hands-on experience in cloud,
-      DevOps, and big data technologies.
-    </p>
-  </div>
-</section>
-
-<section id="experience">
-  <h2>Experience</h2>
-
-  <div class="card">
-    <h3>Data Engineer – Forvia (2024 – Present)</h3>
-    <ul>
-      <li>Designed centralized ingestion workflows with multi-level approvals.</li>
-      <li>Implemented governance and access control frameworks.</li>
-      <li>Optimized SAP pipelines achieving 99.9% uptime.</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3>Associate Data Engineer – Forvia (2022 – 2024)</h3>
-    <ul>
-      <li>Built PySpark pipelines and dashboards for plant cost analysis.</li>
-      <li>Developed Foundry APIs, health checks, and scheduling workflows.</li>
-    </ul>
-  </div>
-</section>
-
-<section id="projects">
-  <h2>Key Projects & Achievements</h2>
-
-  <div class="card">
-    <strong>Request Manager Application</strong>
-    <p>Centralized access approval workflows using PySpark APIs, Webhooks, and Foundry Workshop.</p>
-  </div>
-
-  <div class="card">
-    <strong>Path Finder Application</strong>
-    <p>Automated dataset lineage, dependency analysis, and AIP-based descriptions.</p>
-  </div>
-
-  <div class="card">
-    <strong>Data Security & Governance</strong>
-    <p>Implemented tiered access (Viewer, Editor, Owner) ensuring secure project data.</p>
-  </div>
-</section>
-
-<section id="skills">
-  <h2>Technical Skills</h2>
-  <div class="skills">
-    <div class="skill-box">Python, PySpark, SQL, TypeScript</div>
-    <div class="skill-box">Palantir Foundry, Workshop, Contour</div>
-    <div class="skill-box">AWS (EC2, S3, Glue, EMR, Lambda)</div>
-    <div class="skill-box">Docker, Kubernetes, Jenkins, Terraform</div>
-    <div class="skill-box">Apache Airflow, Hive, Kafka</div>
-    <div class="skill-box">Data Governance & Security</div>
-  </div>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <div class="card contact">
-    <p><i class="fas fa-envelope"></i> paswansiddhi472@gmail.com</p>
-    <p><i class="fas fa-phone"></i> 8114244109</p>
-    <p><i class="fab fa-linkedin"></i> linkedin.com/in/siddhi-paswan</p>
-  </div>
-</section>
-
-<footer>
-  © 2026 Siddhi Paswan | Deployed via Jenkins + Docker + Kubernetes 🚀
-</footer>
-
-</body>
-</html>
