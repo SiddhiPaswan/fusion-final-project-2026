@@ -16,6 +16,7 @@ spec:
     spec:
       containers:
       - name: myweb
-        image: siddhipaswan/my011-5
+        image: siddhipaswan/myimage:latest   # Jenkins will replace this
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
