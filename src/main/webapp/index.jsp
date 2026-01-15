@@ -10,34 +10,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    :root {
-      --bg: #f4f6f8;
-      --text: #333;
-      --card: #ffffff;
-      --primary: #3498db;
-      --secondary: #2c3e50;
-    }
-
-    body.dark {
-      --bg: #121212;
-      --text: #eaeaea;
-      --card: #1e1e1e;
-      --primary: #00c3ff;
-      --secondary: #0a2540;
-    }
-
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      transition: 0.3s;
+      background: #f4f6f8;
+      color: #333;
     }
 
     header {
-      background: linear-gradient(120deg, var(--secondary), var(--primary));
+      background: linear-gradient(120deg, #2c3e50, #3498db);
       color: white;
-      padding: 50px 20px;
+      padding: 40px 20px;
       text-align: center;
     }
 
@@ -47,92 +30,99 @@
     }
 
     header p {
-      margin-top: 10px;
       font-size: 18px;
+      margin-top: 8px;
     }
 
-    .toggle {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      cursor: pointer;
-      font-size: 20px;
+    .download-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 22px;
+      background: #ffffff;
+      color: #3498db;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .download-btn i {
+      margin-right: 8px;
+    }
+
+    .download-btn:hover {
+      background: #ecf3fa;
+      transform: translateY(-2px);
     }
 
     nav {
+      background: white;
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
-      background: var(--card);
       padding: 15px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
     nav a {
       text-decoration: none;
-      color: var(--primary);
+      color: #3498db;
       font-weight: 600;
     }
 
     section {
-      max-width: 1100px;
+      max-width: 1000px;
       margin: auto;
       padding: 40px 20px;
     }
 
     h2 {
-      border-bottom: 2px solid var(--primary);
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
       display: inline-block;
       margin-bottom: 20px;
     }
 
     .card {
-      background: var(--card);
+      background: white;
       padding: 20px;
       border-radius: 8px;
       margin-bottom: 20px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.08);
     }
 
-    .grid {
+    .skills {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 15px;
     }
 
-    .badge {
-      display: inline-block;
-      margin: 5px;
-      padding: 6px 12px;
-      background: var(--primary);
-      color: white;
-      border-radius: 20px;
-      font-size: 13px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 20px;
-      background: var(--primary);
-      color: white;
+    .skill-box {
+      background: #ecf3fa;
+      padding: 15px;
       border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      margin-top: 10px;
+      font-weight: 500;
     }
 
     footer {
-      background: var(--secondary);
+      background: #2c3e50;
       color: white;
       text-align: center;
       padding: 20px;
-      margin-top: 40px;
+    }
+
+    .contact i {
+      margin-right: 10px;
+      color: #3498db;
     }
 
     @media (max-width: 600px) {
-      header h1 { font-size: 28px; }
-      header p { font-size: 16px; }
+      header h1 {
+        font-size: 28px;
+      }
+      header p {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
@@ -140,14 +130,11 @@
 <body>
 
 <header>
-  <div class="toggle" onclick="toggleTheme()">
-    <i class="fas fa-moon"></i>
-  </div>
   <h1>Siddhi Paswan</h1>
   <p>Data Engineer | Palantir Foundry | DevOps & Cloud</p>
 
-  <!-- Resume Download -->
-  <a class="btn" href="SiddhiPaswan_Resume.pdf" download>
+  <!-- ✅ DOWNLOAD RESUME BUTTON -->
+  <a href="Siddhi_Paswan_Resume.pdf" download class="download-btn">
     <i class="fas fa-download"></i> Download Resume
   </a>
 </header>
@@ -157,9 +144,82 @@
   <a href="#experience">Experience</a>
   <a href="#projects">Projects</a>
   <a href="#skills">Skills</a>
-  <a href="#devops">DevOps</a>
   <a href="#contact">Contact</a>
 </nav>
 
 <section id="about">
   <h2>About Me</h2>
+  <div class="card">
+    Data Engineer with 3+ years of experience on Palantir Foundry, specializing in
+    scalable data pipelines, governance frameworks, cloud infrastructure, and
+    DevOps automation.
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+
+  <div class="card">
+    <h3>Data Engineer – Forvia (2024 – Present)</h3>
+    <ul>
+      <li>Designed centralized ingestion workflows with multi-level approvals</li>
+      <li>Implemented data governance and access control frameworks</li>
+      <li>Optimized SAP pipelines achieving 99.9% uptime</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Associate Data Engineer – Forvia (2022 – 2024)</h3>
+    <ul>
+      <li>Built PySpark pipelines and dashboards for plant cost analysis</li>
+      <li>Developed Foundry APIs, health checks, and scheduling workflows</li>
+    </ul>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Key Projects & Achievements</h2>
+
+  <div class="card">
+    <strong>Request Manager Application</strong>
+    <p>Centralized access approval workflows using PySpark APIs, Webhooks, and Foundry Workshop.</p>
+  </div>
+
+  <div class="card">
+    <strong>Path Finder Application</strong>
+    <p>Automated dataset lineage, dependency analysis, and AIP-based descriptions.</p>
+  </div>
+
+  <div class="card">
+    <strong>Data Security & Governance</strong>
+    <p>Implemented tiered access (Viewer, Editor, Owner) ensuring secure project data.</p>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Technical Skills</h2>
+  <div class="skills">
+    <div class="skill-box">Python, PySpark, SQL, TypeScript</div>
+    <div class="skill-box">Palantir Foundry, Workshop, Contour</div>
+    <div class="skill-box">AWS (EC2, S3, Glue, EMR, Lambda)</div>
+    <div class="skill-box">Docker, Kubernetes, Jenkins, Terraform</div>
+    <div class="skill-box">Apache Airflow, Hive, Kafka</div>
+    <div class="skill-box">Data Governance & Security</div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card contact">
+    <p><i class="fas fa-envelope"></i> paswansiddhi472@gmail.com</p>
+    <p><i class="fas fa-phone"></i> 8114244109</p>
+    <p><i class="fab fa-linkedin"></i> linkedin.com/in/siddhi-paswan</p>
+  </div>
+</section>
+
+<footer>
+  © 2026 Siddhi Paswan | CI/CD Powered Resume 🚀
+</footer>
+
+</body>
+</html>
