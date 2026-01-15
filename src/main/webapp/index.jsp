@@ -17,27 +17,34 @@
       color: #333;
     }
 
+    /* HEADER */
     header {
       background: linear-gradient(120deg, #2c3e50, #3498db);
       color: white;
-      padding: 40px 20px;
-      text-align: center;
+      padding: 30px 40px;
     }
 
-    header h1 {
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .intro h1 {
       margin: 0;
       font-size: 36px;
     }
 
-    header p {
+    .intro p {
+      margin: 6px 0 12px;
       font-size: 18px;
-      margin-top: 8px;
     }
 
     .download-btn {
       display: inline-block;
-      margin-top: 15px;
-      padding: 12px 22px;
+      padding: 10px 20px;
       background: #ffffff;
       color: #3498db;
       border-radius: 6px;
@@ -55,6 +62,23 @@
       transform: translateY(-2px);
     }
 
+    .contact-header {
+      text-align: right;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .contact-header i {
+      margin-right: 8px;
+      color: #ffd369;
+    }
+
+    .contact-header a {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* NAV */
     nav {
       background: white;
       display: flex;
@@ -111,16 +135,22 @@
       padding: 20px;
     }
 
-    .contact i {
-      margin-right: 10px;
-      color: #3498db;
-    }
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
 
-    @media (max-width: 600px) {
-      header h1 {
+      .contact-header {
+        text-align: left;
+      }
+
+      .intro h1 {
         font-size: 28px;
       }
-      header p {
+
+      .intro p {
         font-size: 16px;
       }
     }
@@ -130,13 +160,29 @@
 <body>
 
 <header>
-  <h1>Siddhi Paswan</h1>
-  <p>Data Engineer | Palantir Foundry | DevOps & Cloud</p>
+  <div class="header-container">
+    <!-- LEFT SIDE -->
+    <div class="intro">
+      <h1>Siddhi Paswan</h1>
+      <p>Data Engineer | Palantir Foundry | DevOps & Cloud</p>
 
-  <!-- ✅ DOWNLOAD RESUME BUTTON -->
-  <a href="Siddhi_Paswan_Resume.pdf" download class="download-btn">
-    <i class="fas fa-download"></i> Download Resume
-  </a>
+      <a href="Siddhi_Paswan_Resume.pdf" download class="download-btn">
+        <i class="fas fa-download"></i> Download Resume
+      </a>
+    </div>
+
+    <!-- RIGHT SIDE CONTACT -->
+    <div class="contact-header">
+      <div><i class="fas fa-envelope"></i> paswansiddhi472@gmail.com</div>
+      <div><i class="fas fa-phone"></i> 8114244109</div>
+      <div>
+        <i class="fab fa-linkedin"></i>
+        <a href="https://www.linkedin.com/in/siddhi-paswan" target="_blank">
+          linkedin.com/in/siddhi-paswan
+        </a>
+      </div>
+    </div>
+  </div>
 </header>
 
 <nav>
@@ -144,7 +190,6 @@
   <a href="#experience">Experience</a>
   <a href="#projects">Projects</a>
   <a href="#skills">Skills</a>
-  <a href="#contact">Contact</a>
 </nav>
 
 <section id="about">
@@ -205,15 +250,6 @@
     <div class="skill-box">Docker, Kubernetes, Jenkins, Terraform</div>
     <div class="skill-box">Apache Airflow, Hive, Kafka</div>
     <div class="skill-box">Data Governance & Security</div>
-  </div>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <div class="card contact">
-    <p><i class="fas fa-envelope"></i> paswansiddhi472@gmail.com</p>
-    <p><i class="fas fa-phone"></i> 8114244109</p>
-    <p><i class="fab fa-linkedin"></i> linkedin.com/in/siddhi-paswan</p>
   </div>
 </section>
 
