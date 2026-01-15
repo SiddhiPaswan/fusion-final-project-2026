@@ -1,169 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Siddhi Paswan | Data Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mr. Camel</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
     body {
       margin: 0;
-      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      background: #f4f6f8;
+      color: #333;
     }
 
-    .container {
-      line-height: 150%;
+    header {
+      background: linear-gradient(120deg, #2c3e50, #3498db);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
     }
 
-    .header {
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    header p {
+      font-size: 18px;
+      margin-top: 5px;
+    }
+
+    nav {
+      background: white;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      justify-content: center;
+      gap: 20px;
       padding: 15px;
-      background-color: #e9e9e9;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
-    .header h1 {
-      color: #222222;
-      font-size: 30px;
-      font-family: 'Pacifico', cursive;
-    }
-
-    .header .social a {
-      padding: 0 5px;
-      color: #222222;
-    }
-
-    .left {
-      float: left;
-      width: 180px;
-      margin: 0;
-      padding: 1em;
-    }
-
-    .content {
-      margin-left: 190px;
-      border-left: 1px solid #d4d4d4;
-      padding: 1em;
-      overflow: hidden;
-    }
-
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
-    }
-
-    li a {
-      display: block;
-      color: #000;
-      padding: 8px 16px;
+    nav a {
       text-decoration: none;
+      color: #3498db;
+      font-weight: 600;
     }
 
-    li a.active {
-      background-color: #84e4e2;
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+
+    .skill-box {
+      background: #ecf3fa;
+      padding: 15px;
+      border-radius: 6px;
+    }
+
+    footer {
+      background: #2c3e50;
       color: white;
-    }
-
-    li a:hover:not(.active) {
-      background-color: #29292a;
-      color: red;
-    }
-
-    table {
-      font-family: arial, sans-serif;
-      border-collapse: collapse;
-      width: 100%;
-      margin: 30px 0;
-    }
-
-    td,
-    th {
-      border: 1px solid #dddddd;
-      padding: 8px;
-    }
-
-    tr:nth-child(1) {
-      background-color: #84e4e2;
-      color: white;
-    }
-
-    tr td i.fas {
-      display: block;
-      font-size: 35px;
       text-align: center;
+      padding: 20px;
     }
 
-    .footer {
-      padding: 55px 20px;
-      background-color: #2e3550;
-      color: white;
-      text-align: center;
+    .contact i {
+      margin-right: 10px;
+      color: #3498db;
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <header class="header">
-      <h1>Welcome to Fusion - This is my  CI/CD final project </h1>
-      <div class="social">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-      </div>
-    </header>
-    <aside class="left">
-      <img src="./assets/html/mr-camel.jpg" width="160px" />
-      <ul>
-        <li><a class="active" href="#home">Home</a></li>
-        <li><a href="#career">Career</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#about">About</a></li>
-      </ul>
-      <br><br>
-      <p>"Do something important in life. I convert green grass to code."<br>- Mr Camel</p>
-    </aside>
-    <main class="content">
-      <h2>About Me</h2>
-      <p>I don't look like some handsome horse, but I am a real desert king. I can survive days without water.</p>
-      <h2>My Career</h2>
-      <p>I work as a DevOps Engineer for a company that makes DevOps SAS Toos for Business.</p>
-      <hr><br>
-      <h2>How Can I Help You?</h2>
-      <table>
-        <tr>
-          <th>SKILL 1</th>
-          <th>SKILL 2</th>
-          <th>SKILL 3</th>
-        </tr>
-        <tr>
-          <td><i class="fas fa-broom"></i></td>
-          <td><i class="fas fa-archive"></i></td>
-          <td><i class="fas fa-trailer"></i></td>
-        </tr>
-        <tr>
-          <td>Cleaning kaktus in your backyard</td>
-          <td>Storing some fat for you</td>
-          <td>Taking you through the desert</td>
-        </tr>
-        <tr>
-      </table>
-      <form>
-        <label>Email: <input type="text" name="email"></label><br>
-        <label> Mobile: <input type="text" name="mobile"> </label><br>
-        <textarea name="comments" rows="4">Enter your message</textarea><br>
-        <input type="submit" value="Submit" /><br>
-      </form>
-    </main>
-    <footer class="footer">&copy; Copyright Mr. Camel</footer>
-  </div>
-</body>
 
+<header>
+  <h1>Siddhi Paswan</h1>
+  <p>Data Engineer | Palantir Foundry | DevOps & Cloud</p>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#experience">Experience</a>
+  <a href="#projects">Projects</a>
+  <a href="#skills">Skills</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">
+    <p>
+      Data Engineer with 3+ years of experience on the Palantir Foundry platform.
+      Skilled in designing scalable data pipelines, governance frameworks, and
+      reliable workflows. Strong problem-solver with hands-on experience in cloud,
+      DevOps, and big data technologies.
+    </p>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+
+  <div class="card">
+    <h3>Data Engineer – Forvia (2024 – Present)</h3>
+    <ul>
+      <li>Designed centralized ingestion workflows with multi-level approvals.</li>
+      <li>Implemented governance and access control frameworks.</li>
+      <li>Optimized SAP pipelines achieving 99.9% uptime.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Associate Data Engineer – Forvia (2022 – 2024)</h3>
+    <ul>
+      <li>Built PySpark pipelines and dashboards for plant cost analysis.</li>
+      <li>Developed Foundry APIs, health checks, and scheduling workflows.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Key Projects & Achievements</h2>
+
+  <div class="card">
+    <strong>Request Manager Application</strong>
+    <p>Centralized access approval workflows using PySpark APIs, Webhooks, and Foundry Workshop.</p>
+  </div>
+
+  <div class="card">
+    <strong>Path Finder Application</strong>
+    <p>Automated dataset lineage, dependency analysis, and AIP-based descriptions.</p>
+  </div>
+
+  <div class="card">
+    <strong>Data Security & Governance</strong>
+    <p>Implemented tiered access (Viewer, Editor, Owner) ensuring secure project data.</p>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Technical Skills</h2>
+  <div class="skills">
+    <div class="skill-box">Python, PySpark, SQL, TypeScript</div>
+    <div class="skill-box">Palantir Foundry, Workshop, Contour</div>
+    <div class="skill-box">AWS (EC2, S3, Glue, EMR, Lambda)</div>
+    <div class="skill-box">Docker, Kubernetes, Jenkins, Terraform</div>
+    <div class="skill-box">Apache Airflow, Hive, Kafka</div>
+    <div class="skill-box">Data Governance & Security</div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card contact">
+    <p><i class="fas fa-envelope"></i> paswansiddhi472@gmail.com</p>
+    <p><i class="fas fa-phone"></i> 8114244109</p>
+    <p><i class="fab fa-linkedin"></i> linkedin.com/in/siddhi-paswan</p>
+  </div>
+</section>
+
+<footer>
+  © 2026 Siddhi Paswan | Deployed via Jenkins + Docker + Kubernetes 🚀
+</footer>
+
+</body>
 </html>
