@@ -112,7 +112,7 @@
 <body>
   <div class="container">
     <header class="header">
-      <h1>Welcome to Fusion - This is your final project for Batch 035 Batch 017 Batch 039 in MicroServices</h1>
+      <h1>Welcome to Fusion - This is my  CI/CD final project </h1>
       <div class="social">
         <a href="#"><i class="fab fa-facebook"></i></a>
         <a href="#"><i class="fab fa-instagram"></i></a>
